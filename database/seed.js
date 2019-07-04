@@ -1,10 +1,46 @@
 const mongoose = require('mongoose');
 const Review = require('./index');
 
-const ratings = [1, 2, 3, 4, 5]
-const fits = ['Runs Small', 'True to Size', 'Runs Large']
-const familiarities = [`I've put it through the wringer`, `I've used it several times`, `I've used it once or twice and have initial impressions`, `I returned this product before using it`, `I gave it as a gift, but have feedback to share`]
-
+const ids = []
+for (let i = 1; i < 100; i++) {
+  ids.push(i)
+};
+const ratings = [1, 2, 3, 4, 5];
+const rating = ratings[Math.floor(Math.random() * 5)]
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+const month = months[Math.floor(Math.random() * 12)]
+const days = [];
+for (let i = 0; i < 29; i++) {
+  days.push(i)
+}
+const day = days[Math.floor(Math.random() * 28)]
+const years = [];
+for (let i = 2008; i < 2019; i++) {
+  years.push(i)
+}
+const year = years[Math.floor(Math.random() * 11)]
+const date = [`${month} ${day}, ${year}`];
+const fits = [null, null, null, null, 'Runs Small', 'Runs Small', 'True to Size', 'True to Size', 'True to Size', 'True to Size', 'True to Size', 'Runs Large', 'Runs Large']
+const fit = fits[Math.floor(Math.random() * 13)]
+const familiarities = [null, null, null, null, `I've put it through the wringer`, `I've put it through the wringer`, `I've used it several times`, `I've used it once or twice and have initial impressions`, `I returned this product before using it`, `I gave it as a gift, but have feedback to share`]
+const familiarity = familiarities[Math.floor(Math.random() * 10)]
+const sizes = [null, null, null, null, null, null, null, `US 29/EU 44`, `US 30-31/EU 46`, `US 32/EU 48`, `US 33-34/EU 50`, `US 36/EU 52`, `US 37/EU 54`, `US 38-39/EU 56`, `US 40/EU 58`]
+const size = sizes[Math.floor(Math.random() * 15)]
+const userHeight = Math.floor(Math.random() * *****)
+const userWeight = Math.floor(Math.random() * *****)
 const seedData = {
   itemId: 0,
   itemName: 'Toe Socks',

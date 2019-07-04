@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/reviews', { useMongoClient: true })
+mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true })
   .then(() => console.log('connected to mongo'))
   .catch(() => console.log('err'))
 
