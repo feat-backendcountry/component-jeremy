@@ -25,7 +25,7 @@ app.get('/reviews/:id', (req, res) => {
   var { id } = req.params;
   db.getReviewById(id)
     .then((data) => {
-      res.status(200).send(data);
+      res.status(200).send(data[0]);
     })
     .catch((err) => {
       res.status(404).send('error server get reviews')
