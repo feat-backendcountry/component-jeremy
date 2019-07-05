@@ -32,4 +32,14 @@ app.get('/reviews/:id', (req, res) => {
     })
 })
 
+app.get('/reviews/', (req, res) => {
+  db.getReviewsDb()
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      res.status(404).send('error server get reviews')
+    })
+})
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
