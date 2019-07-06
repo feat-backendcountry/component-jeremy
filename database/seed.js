@@ -586,7 +586,7 @@ const gen100 = function() {
     for (var j = 0; j < numOfComments; j++) {
 
       var username = usernames[Math.floor(Math.random() * 300)];
-      var userAvatar = 'https://avatars0.githubusercontent.com/u/52470968?s=200&v=4'
+      var userAvatar = 'http://lorempixel.com/150/150/'
       var month = months[Math.floor(Math.random() * 12)];
       var day = days[Math.floor(Math.random() * 28)];
       var year = years[Math.floor(Math.random() * 11)];
