@@ -2,7 +2,7 @@ import React from 'react';
 
 
 class Summary extends React.Component {
-  constructor({props}) {
+  constructor(props) {
     super(props);
     this.state = {};
   }
@@ -18,6 +18,14 @@ class Summary extends React.Component {
     const reviews = this.props.reviews;
     const ratings = reviews.map((review, i, arr) => review.rating);
     const avgRating = ratings.reduce((a, b) => a + b) / ratings.length;
+    const ratingsObj = {};
+    for (let i = 0; i < ratings.length; i++) {
+      if (ratingsObj[ratings[i]]) {
+        ratingsObj[ratings[i]]++;
+      } else if (ratings[i] !== undefined) {
+        ratingsObj[ratings[i]] = 1;
+      }
+    }
     const fitsArr = reviews.map((review) => review.fit);
     //avg fit is determined by weighting small at 0 reg at 50 and large at 100 and is the percent above/below avg
     const avgFit = fitsArr
@@ -32,25 +40,42 @@ class Summary extends React.Component {
         fitsObj[fitsArr[i]] = 1;
       }
     }
+    //determine if Fits slightly small
     this.setState({
       reviews,
-      ratings,
       avgRating,
+      ratingsObj,
       avgFit,
       fitsObj
-    });
-    console.log('fits object: ', JSON.stringify(fitsObj));
-    console.log('avgFit', avgFit);
-    console.log('avgRating: ', avgRating);
+    }, () => console.log(JSON.stringify(this.state.ratingsObj)));
   }
 
   render() {
-    return (
-      <div>
-        <div>No. of reviews: {this.props.reviews && this.props.reviews.length}</div>
-        <div>{this.props.reviews && JSON.stringify(this.props.reviews[0])}</div>
-      </div>
-    );
+    if (this.state.reviews) {
+      return (
+        <div>
+          <div>Overall Rating</div>
+          <div>{this.state.avgRating.toFixed(1)} based on {this.state.reviews.length} ratings</div>
+          <div>Review Summary</div>
+          <ul>
+            <li>No. of 5 Star Ratings: {this.state.ratingsObj[5]} / barChart: {(this.state.ratingsObj[5] / this.state.reviews.length).toFixed(2) * 100}%</li>
+            <li>No. of 4 Star Ratings: {this.state.ratingsObj[4]} / barChart: {(this.state.ratingsObj[4] / this.state.reviews.length).toFixed(2) * 100}%</li>
+            <li>No. of 3 Star Ratings: {this.state.ratingsObj[3]} / barChart: {(this.state.ratingsObj[3] / this.state.reviews.length).toFixed(2) * 100}%</li>
+            <li>No. of 2 Star Ratings: {this.state.ratingsObj[2]} / barChart: {(this.state.ratingsObj[2] / this.state.reviews.length).toFixed(2) * 100}%</li>
+            <li>No. of 1 Star Ratings: {this.state.ratingsObj[1]} / barChart: {(this.state.ratingsObj[1] / this.state.reviews.length).toFixed(2) * 100}%</li>
+          </ul>
+          <div>Avg Fit Goes Here</div>
+          <ul>
+            <li>Avg Fit: {this.state.avgFit.toFixed(2)}%</li>
+            <li>Runs Small: {this.state.fitsObj['Runs Small']}</li>
+            <li>True to Size: {this.state.fitsObj['True to Size']}</li>
+            <li>Runs Large: {this.state.fitsObj['Runs Large']}</li>
+          </ul>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
