@@ -10,10 +10,10 @@ const QAView = (props) =>
       <option>Unanswered Questions</option>
     </select>
     <ul>
-      <li>Question 1</li>
-      <li>Question 2</li>
-      <li>Question 3</li>
-      <li>Question 4</li>
+      <li>Hard-Coded Question 1</li>
+      <li>Hard-Coded Question 2</li>
+      <li>Hard-Coded Question 3</li>
+      <li>Hard-Coded Question 4</li>
     </ul>
   </div>;
 
