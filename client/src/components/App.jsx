@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'Reviews',
-      itemId: 1,
+      itemId: 20,
       reviews: []
     };
   }
@@ -27,9 +27,7 @@ class App extends React.Component {
     Axios.get(`/reviews/${this.state.itemId}`)
       .then(({data}) => {
         const reviews = data;
-        this.setState({
-          reviews
-        });
+        this.setState({reviews});
       })
       .catch((err) => {
         console.log('error client getReviews');
