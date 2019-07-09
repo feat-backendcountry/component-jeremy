@@ -267,7 +267,7 @@ const usernames = [
   'Paula Goodwin',
   'Averi Moon',
   'Kelton Mason',
-  'Yadiel Vargas',
+  'Yadiel constgas',
   'Daphne Mooney',
   'Kiara Todd',
   'Nyasia Pace',
@@ -575,38 +575,38 @@ const badReviews = [
 ];
 
 const gen100 = function () {
-  var seed = [];
-  for (var i = 1; i < 101; i++) {
+  const seed = [];
+  for (let i = 1; i < 101; i++) {
 
-    var itemId = i;
-    var itemName = itemNames[i];
-    var numOfComments = Math.floor(Math.random() * 10);
-    var itemReviews = [];
+    const itemId = i;
+    const itemName = itemNames[i];
+    const numOfComments = Math.floor(Math.random() * 10);
+    const itemReviews = [];
 
-    for (var j = 0; j < numOfComments; j++) {
+    for (let j = 0; j < numOfComments; j++) {
 
-      var username = usernames[Math.floor(Math.random() * 300)];
-      var userAvatar = 'http://lorempixel.com/150/150/';
-      var month = months[Math.floor(Math.random() * 12)];
-      var day = days[Math.floor(Math.random() * 28)];
-      var year = years[Math.floor(Math.random() * 11)];
-      var date = `${month} ${day}, ${year}`;
+      const username = usernames[Math.floor(Math.random() * 300)];
+      const userAvatar = 'http://lorempixel.com/150/150/';
+      const month = months[Math.floor(Math.random() * 12)];
+      const day = days[Math.floor(Math.random() * 28)];
+      const year = years[Math.floor(Math.random() * 11)];
+      const date = `${month} ${day}, ${year}`;
 
-      var rating = ratings[Math.floor(Math.random() * 5)];
-      var reviewTitle = (rating === 5) ? goodReviewTitles[Math.floor(Math.random() * 17)]
+      const rating = ratings[Math.floor(Math.random() * 5)];
+      const reviewTitle = (rating === 5) ? goodReviewTitles[Math.floor(Math.random() * 17)]
         : (rating >= 3) ? neutReviewTitles[Math.floor(Math.random() * 17)]
           : badReviewTitles[Math.floor(Math.random() * 17)];
-      var reviewBody = (rating === 5) ? goodReviews[Math.floor(Math.random() * 9)]
+      const reviewBody = (rating === 5) ? goodReviews[Math.floor(Math.random() * 9)]
         : (rating >= 3) ? neutReviews[Math.floor(Math.random() * 9)]
           : badReviews[Math.floor(Math.random() * 9)];
 
-      var hasFit = [false, true][Math.floor(Math.random() * 2)];
+      const hasFit = [false, true][Math.floor(Math.random() * 2)];
       if (hasFit) {
-        var familiarity = familiarities[Math.floor(Math.random() * 9)];
-        var fit = fits[Math.floor(Math.random() * 12)];
-        var size = sizes[Math.floor(Math.random() * 9)];
-        var userHeight = Math.floor(Math.random() * 24) + 55;
-        var userWeight = Math.floor(Math.random() * 160) + 110;
+        const familiarity = familiarities[Math.floor(Math.random() * 9)];
+        const fit = fits[Math.floor(Math.random() * 12)];
+        const size = sizes[Math.floor(Math.random() * 9)];
+        const userHeight = Math.floor(Math.random() * 24) + 55;
+        const userWeight = Math.floor(Math.random() * 160) + 110;
         itemReviews[j] = {
           rating,
           date,

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true })
   .then(() => console.log('connected to mongo'))
-  .catch(() => console.log('err'))
+  .catch(() => console.log('err'));
 
 const reviewSchema = mongoose.Schema(
   {
@@ -22,8 +22,8 @@ const reviewSchema = mongoose.Schema(
       userWeight: { type: Number, required: false }
     }]
   }
-)
+);
 
-const Review = mongoose.model('Review', reviewSchema)
+const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = Review
+module.exports = Review;
