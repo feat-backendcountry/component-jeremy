@@ -16,9 +16,9 @@ const ReviewsView = ({reviews}) =>
       <option>Runs Large</option>
       <option>All Fit Reviews</option>
     </select>
-    <ul>
+    <section className='review'>
       {(reviews.itemReviews) && reviews.itemReviews.map((review, i) => <Review key={review._id} review={review}/>)}
-    </ul>
+    </section>
   </div>;
 
 export default ReviewsView;
