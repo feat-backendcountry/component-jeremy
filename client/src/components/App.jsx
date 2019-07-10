@@ -38,7 +38,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="panel">
-          <h1>Reviews or Q and A</h1>
+          {/* <h1>Reviews or Q and A</h1> */}
           <nav className="nav">
             <span
               className={this.state.view === 'Reviews'

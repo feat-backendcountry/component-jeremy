@@ -4,7 +4,7 @@ import Review from './Review.jsx';
 
 const ReviewsView = ({reviews}) =>
   <div>
-    <h4>Reviews Summary</h4>
+    {/* <h4>Reviews Summary</h4> */}
     <Summary reviews={reviews.itemReviews}/>
     <h4>Reviews for {reviews.itemName}, itemId: {reviews.itemId}</h4>
     <select>
@@ -16,7 +16,7 @@ const ReviewsView = ({reviews}) =>
       <option>Runs Large</option>
       <option>All Fit Reviews</option>
     </select>
-    <section className='review'>
+    <section className='reviews'>
       {(reviews.itemReviews) && reviews.itemReviews.map((review, i) => <Review key={review._id} review={review}/>)}
     </section>
   </div>;
