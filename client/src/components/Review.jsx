@@ -10,7 +10,7 @@ const Review = ({ review }) =>
     <section className='reviewBody'>{review.reviewBody}</section>
     <section className='userBox'>
       <section className='userCard' className='userAvatar'>
-        <img src={review.userAvatar}></img>
+        <img src={review.userAvatar} alt='user avatar'></img>
       </section>
       <section className='userCard' className='username'>{review.username}</section>
     </section>
