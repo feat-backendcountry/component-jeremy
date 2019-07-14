@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'Reviews',
-      itemId: 20, //20 has 9
+      itemId: Math.floor(Math.random() * 100),
       reviews: []
     };
     this.changeView = this.changeView.bind(this);
@@ -114,7 +114,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div>Page View for {this.state.reviews.itemName}, itemId: {this.state.reviews.itemId}</div>
+        <div>Page View for {this.state.reviews.itemName}, itemId: {this.state.reviews.itemId} has {this.state.reviews.itemReviews && this.state.reviews.itemReviews.length} reviews.</div>
         <div className="main">
           <div className="tabs-container">
             <ul className="tabs">
@@ -126,6 +126,8 @@ class App extends React.Component {
               >
                 Reviews
               </li>
+              <li></li>
+              <li></li>
               <li
                 className={this.state.view === 'Q and A'
                   ? 'selected'
