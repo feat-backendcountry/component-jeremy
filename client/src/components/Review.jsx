@@ -8,17 +8,35 @@ const Review = ({ review }) =>
     </section>
     <section className="reviewTitle">{review.reviewTitle}</section>
     {review.fit && <div className="reviewHasFit">
-      <section className="reviewFamiliarity">Familiarity: {review.familiarity}</section>
-      <section className="reviewFit">Fit: {review.fit}</section>
-      <section className="reviewSize">Size Bought: {review.size}</section>
-      <section className="reviewHeight">Height: {review.userHeight}</section>
-      <section className="reviewWeight">Weight: {review.userWeight}lbs</section>
-    </div>
-    }
-    <section className="reviewBody">{review.reviewBody}</section>
+      <ul>
+        <li className="reviewFamiliarity">
+          <span className="reviewFit-title">Familiarity: </span>
+          <span className="reviewFit-desc">{review.familiarity}</span>
+        </li>
+        <li className="reviewFit">
+          <span className="reviewFit-title">Fit: </span>
+          <span className="reviewFit-desc">{review.fit}</span>
+        </li>
+        <li className="reviewSize">
+          <span className="reviewFit-title">Size Bought: </span>
+          <span className="reviewFit-desc">{review.size}</span>
+        </li>
+        <li className="reviewHeight">
+          <span className="reviewFit-title-short">Height: </span>
+          <span className="reviewFit-desc-short">{review.userHeight}"</span>
+        </li>
+        <li className="reviewWeight">
+          <span className="reviewFit-title-short">Weight: </span>
+          <span className="reviewFit-desc-short">{review.userWeight}lbs.</span>
+        </li>
+      </ul>
+    </div>}
+    <br></br>
+    <p className="reviewBody">{review.reviewBody}</p>
     <section className="userBox">
       <section className="userCard" className="userAvatar">
         <img src={review.userAvatar} alt="user avatar"></img>
+        {/* <img src="https://avatars0.githubusercontent.com/u/52470968?s=200&v=4" alt="user avatar"></img> */}
       </section>
       <section className="userCard" className="username">{review.username}</section>
     </section>

@@ -13,7 +13,9 @@ class Summary extends React.Component {
         <div className='summary-container'>
           <div className='avgRating'>
             <div className='avgRating-title'>Overall Rating</div>
-            <div className="avgRating-subtitle">{this.props.summaryData.avgRating.toFixed(1)} based on {this.props.reviews.length} ratings</div>
+            <div className="avgRating-subtitle">
+              {this.props.summaryData.avgRating.toFixed(1)} based on {this.props.reviews.length} ratings
+            </div>
             <div>starsimagehere</div>
           </div>
           <div className='starsBar'>

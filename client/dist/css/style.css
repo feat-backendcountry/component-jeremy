@@ -30,10 +30,6 @@
     font-style: normal
 } */
 
-.app {
-
-}
-
 .main {
   border-top: 1px solid #222;
   font-size: 14px;
@@ -50,52 +46,8 @@
   width: 100%;
   box-sizing: border-box;
   float: left;
-}
-
-.write-review-title {
-  font-size: 28px;
-  font-family: CaslonGraphique,serif;
-  font-weight: normal;
-  margin: 30px 0;
-  text-transform: none;
-  line-height: 1.25;
-  display: block;
-  margin-block-start: 1.33em;
-  margin-block-end: 1.33em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
   text-align: center;
 }
-
-.write-review-btn {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    transition: .3s;
-    background-color: #fff;
-    border-radius: 100px;
-    box-sizing: border-box;
-    color: #222;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    height: 35px;
-    line-height: 2.3;
-    min-height: 30px;
-    min-width: 130px;
-    overflow: hidden;
-    padding: 0 17px;
-    text-align: center;
-    text-transform: capitalize;
-    vertical-align: middle;
-    border: 1px solid #222;
-    padding: 0 14px
-}
-
-.write-review-btn:hover {
-    background: #222;
-    color: #fff
-}
-
 
 /*
 
@@ -124,7 +76,6 @@ View Selector
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px;
-  text-align: center;
   text-size-adjust: 100%;
   width: auto;
   -webkit-font-smoothing: antialiased;
@@ -134,7 +85,7 @@ View Selector
   margin-right: 20px;
   cursor: pointer;
   padding: 0 2px;
-
+  text-align: center;
 }
 
 .tabs li {
@@ -319,8 +270,58 @@ Summary block
   -webkit-font-smoothing: antialiased;
 }
 
-.content {
+/*
 
+write a review
+
+*/
+.write-review-container {
+  margin-bottom: 20px;
+}
+
+.write-review-title {
+  font-size: 28px;
+  font-family: CaslonGraphique,serif;
+  font-weight: 800;
+  margin: 20px 0;
+  text-transform: none;
+  line-height: 1.25;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: center;
+}
+
+.write-review-btn {
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s;
+  background-color: #fff;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #222;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 2.3;
+  min-height: 30px;
+  min-width: 130px;
+  overflow: hidden;
+  padding: 0 17px;
+  text-align: center;
+  text-transform: capitalize;
+  vertical-align: middle;
+  border: 1px solid #222;
+  padding: 0 14px;
+  text-decoration: none
+}
+
+.write-review-btn:hover {
+    background: #222;
+    color: #fff
 }
 
 /*
@@ -329,11 +330,11 @@ filter
 
 */
 
-.fiter-select {
-
+.filter-container {
+  text-align: left
 }
 
-.filter-head {
+.fiter-select {
 
 }
 
@@ -348,88 +349,94 @@ reviews
   margin: 2;
   padding: 20px 5px 60px;
   box-sizing: border-box;
-  width: 75%;
+  width: 80%;
   text-align: left;
-}
-
-.review {
-  display: inline-block;
-  margin: 2;
-  padding: 20px 5px 60px;
-  box-sizing: border-box;
-  width: 75%;
-  text-align: left;
-
 }
 
 .review {
   background-color: rgb(255, 255, 255);
-border-bottom-color: rgb(194, 194, 194);
-border-bottom-style: solid;
-border-bottom-width: 1px;
-border-image-outset: 0px;
-border-image-repeat: stretch;
-border-image-slice: 100%;
-border-image-source: none;
-border-image-width: 1;
-border-left-color: rgb(194, 194, 194);
-border-left-style: solid;
-border-left-width: 1px;
-border-right-color: rgb(194, 194, 194);
-border-right-style: solid;
-border-right-width: 1px;
-border-top-color: rgb(194, 194, 194);
-border-top-style: solid;
-border-top-width: 1px;
-color: rgb(0, 0, 0);
-display: block;
-font-family: AktivGrotesk, Helvetica, Arial, sans-serif;
-font-size: 14px;
-/* height: 395.391px; */
-line-height: 20px;
-margin-bottom: 30px;
-margin-left: 0px;
-margin-right: 0px;
-margin-top: 0px;
-min-height: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-padding-right: 0px;
-padding-top: 0px;
-position: relative;
-text-size-adjust: 100%;
-width: auto;
--webkit-font-smoothing: antialiased;
+  border-bottom-color: rgb(194, 194, 194);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(194, 194, 194);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(194, 194, 194);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(194, 194, 194);
+  border-top-style: solid;
+  border-top-width: 1px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  position: relative;
+  text-size-adjust: 100%;
+  width: auto;
 }
 
-img {
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
+.reviewHasFit ul {
+  display: block;
+  list-style-type: none;
+  margin: 0 0 20px;
+  padding: 0;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 2px;
 }
 
-.commentArea {
+.reviewHasFit li {
+  margin: 0 0 5px;
+  display: list-item;
+  text-align: -webkit-match-parent;
+
+}
+
+.reviewFit-title {
+  color: #666;
   display: inline-block;
-  width: 33%;
+  width: 100px;
 }
 
-.userBox {
+.reviewFit-desc {
+  width: initial;
+  color: #222;
   display: inline-block;
-  width: 100%;
-  height: 25px;
+  vertical-align: top;
 }
 
-.userAvatar {
+.reviewHeight {
+  float: left;
+  width: 100px;
+}
+
+.reviewWeight {
+  float: left;
+  width: 100px;
+}
+
+.reviewFit-title-short {
+  color: #666;
+  width: 50px;
   display: inline-block;
 }
 
-.username {
+.reviewFit-desc-short {
+  width: 50px;
   display: inline-block;
-}
-
-.commentArea {
-  display: inline-block;
-  text-align: center;
 }
 
 .reviewHead {
@@ -478,4 +485,34 @@ img {
   display: block;
   padding: 20px 20px;
   margin-bottom: 10px;
+}
+
+.commentArea {
+  display: inline-block;
+  width: 33%;
+}
+
+.userBox {
+  display: inline-block;
+  width: 100%;
+  height: 25px;
+}
+
+.userAvatar {
+  display: inline-block;
+}
+
+.userAvatar img {
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+}
+
+.username {
+  display: inline-block;
+}
+
+.commentArea {
+  display: inline-block;
+  text-align: center;
 }
