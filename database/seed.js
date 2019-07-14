@@ -541,7 +541,7 @@ const goodReviews = [
   'These pants are tough as nails. The fit is definitely on the tighter side and as others have stated they run small in the hips and butt. Otherwise they are the perfect hill pant and I will buy again when and if these ever wear out (or if new colors come out lol)',
   'I bought these for my boyfriend and am leaving this review on his behalf. These are now his favorite pants. I had to beg to wash them, he wouldn’t take them off. Also may I comment that the rear view is pretty fantastic, these are an awesome fit and true to size.',
   'These are probably the best pant\'s I have owned. I love kuhl pants but they don\'t really fit in the same category as these pants. These are more burly - great for work or hiking in tough environments.',
-  'Great. Wear them lots. Will buy more. 10/10 would recommend.',
+  'Great. Wear them lots. Will buy more. 10/10 would recommend. Great. Wear them lots. Will buy more. 10/10 would recommend. Great. Wear them lots. Will buy more. 10/10 would recommend.',
   'I have like 4 pair of these pants. I have used them for a bunch of different outdoor activities. I just ordered these for my dad and he is going to be so pumped to try them out!',
   'These are some tough work pants. Huge fan of these trekking pants.  Super durable, good articulation, and great fit.  I use these not only for trekking and hiking, but around the house, on film shoots, and everything in between.  No complaints and worth every penny!',
   'It took a while to pull the trigger due to the high price point, but these are awesome for the outdoors.  I expect these will be my camping and backpacking pants for years to come.',
@@ -554,8 +554,8 @@ const neutReviews = [
   'Just got these and the Keb for my Boyfriend! He loves them both equally and never takes them off..',
   'I wanted to like these, and don\'t get me wrong, I truly do believe if you like many men don\'t have my particular problem that these pants will be the greatest lower body purchase you will ever make. The quality is great, but for my body type these just don\'t work, because my gluteus maximus is well, american sized. ',
   'The pockets sit perfectly along the thigh so if you have something in them they don\'t bunch up around the knee when you\'re stepping. The material holds up really well.',
-  'There\'s nothing like waxing your pants for the 1st Time!!! Best pair of pants out there.',
-  'I have not worn these trekking but love the initial fit. Super easy to wax for additional weather protection.',
+  'There\'s nothing like waxing your pants for the 1st Time!!! Best pair of pants out there. So far and they are great. Well thought out and worth every penny.',
+  'I have not worn these trekking but love the initial fit. Super easy to wax for additional weather protection. Well thought out and worth every penny.',
   'Great pants, classic cut/style. These are built to last and I would say that they are a little heavy for some occasions. They are more comfortable in the wild - climbing mountains or building a log cabin of some sort.',
   'Used these a few times, so far and they are great. Repels wind pretty well even without a base layer in 20° & 30° weather. stayed petty dry on snowy hikes and snowshoe outings, so far, with the G-1000 proofing. Although if you\'re out in say a blizzard, or heavy snow, may not be ideal for that, but I would like to see how they fair in that.',
   'These some rugged pants. You need at least one good pair and I highly recommend these....not to mention they are cool looking.'
@@ -563,15 +563,15 @@ const neutReviews = [
 
 const badReviews = [
   'These pants are great (and fit me perfect) however, if you have a non proportionate body, then you probably won’t like these.  The pants seem to be designed around athletically built proportionate non overweight individuals.',
-  'The DUSK color is a very dark color like in the photo?',
-  'Will these fit over snowboarding shoes?',
-  'Worth $150? That is the question I’m sure many of you have about these pants. The answer is no.',
-  'The worst $150 I\'ve ever spent, what kind of european crap sizing is this?',
-  'If I wanted shorts I would have purchased shorts, not $150 pants',
+  'I\'m a solid size 36 waist. I ordered and found that they are more of a 33-34 waist... I couldn\'t even button them. The quality looked good, and they are pretty cool, but I\'m having to return them.',
+  'Will these fit over snowboarding shoes? The DUSK color is a very dark color like in the photo? Why am I asking in a review instead of a question?',
+  'Worth $150? That is the question I’m sure many of you have about these pants. The answer is no, my thighs split the pants as soon as I went for a slight jaunt',
+  'The worst $150 I\'ve ever spent, what kind of european crap sizing is this? If I wanted shorts I would have purchased shorts, not $150 pants',
+  'I\'m a solid size 36 waist. I ordered and found that they are more of a 33-34 waist... I couldn\'t even button them. The quality looked good, and they are pretty cool, but I\'m having to return them.',
   'Wore these for 2 weeks in Iceland, held up terribly.  Do I have to purchase my own wax for what are supposed to be waterproof pants?',
   'I\'m a solid size 36 waist. I ordered and found that they are more of a 33-34 waist... I couldn\'t even button them. The quality looked good, and they are pretty cool, but I\'m having to return them.',
   'I have fairly muscular legs,  While the waist fit they are very snug down the leg and also I believe a little shorter in length they they claim compared to most companies out there.  I think they looked well made and really wish I could have tried them out. I ordered the next size up to see if that will do the trick.',
-  'How much do these weigh?'
+  'How much do these weigh? Beacuse I\'m headed to Africa and there is a limit to how much I can take on the tiny airplanes I\'m forced to fly in.'
 ];
 
 const gen100 = function () {
@@ -580,7 +580,7 @@ const gen100 = function () {
 
     const itemId = i;
     const itemName = itemNames[i];
-    const numOfComments = Math.floor(Math.random() * 10);
+    const numOfComments = Math.floor(Math.random() * 30);
     const itemReviews = [];
 
     for (let j = 0; j < numOfComments; j++) {
