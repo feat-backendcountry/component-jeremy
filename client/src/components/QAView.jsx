@@ -2,9 +2,9 @@ import React from 'react';
 
 const QAView = (props) =>
   <div>
-    <h3>Have questions about this product?</h3>
-    <button>Ask a Question</button>
-    <br></br>
+    <div className="write-review-title" >Have questions about this product?</div>
+    <button className="write-review-btn">Ask a Question</button>
+    {/* <br></br>
     <select>
       <option>Questions</option>
       <option>Unanswered Questions</option>
@@ -14,7 +14,7 @@ const QAView = (props) =>
       <li>Hard-Coded Question 2</li>
       <li>Hard-Coded Question 3</li>
       <li>Hard-Coded Question 4</li>
-    </ul>
+    </ul> */}
   </div>;
 
 export default QAView;
