@@ -1,7 +1,7 @@
 import React from 'react';
 import Summary from './Summary.jsx';
 import Review from './Review.jsx';
-import Reviews from './Reviews.jsx';
+// import Reviews from './Reviews.jsx';
 
 
 class ReviewsView extends React.Component {
@@ -15,7 +15,6 @@ class ReviewsView extends React.Component {
   }
 
   changeFilter(e) {
-    console.log(e.target.value, ' selected');
     const selected = e.target.value;
     let filteredReviews = [];
     if (selected === 'All' || selected === 'Reviews') {
@@ -41,9 +40,10 @@ class ReviewsView extends React.Component {
         <Summary reviews={this.props.reviews.itemReviews} summaryData={this.props.summaryData} />
         <div className="write-review-container">
           <div className="write-review-title">What do you think about this product?</div>
-          <button className="write-review-btn">Write A Review</button>
+          {/* <button className="write-review-btn">Write A Review</button> */}
+          <a className="write-review-btn" href="/">Write A Review</a>
         </div>
-        <div className="fiter-head">
+        <div className="fiter-container">
           <div className="filter-title">View</div>
           <select className="filter-select" onChange={this.changeFilter}>
             <option defaultValue>All</option>
@@ -55,9 +55,6 @@ class ReviewsView extends React.Component {
             <option>All Fit Reviews</option>
           </select>
         </div>
-        {/* <div className="reviews-container">
-          <Reviews reviews={this.props.reviews.itemReviews}/>
-        </div> */}
         <section className='reviews'>
           {this.state.filteredReviews.length > 0 && this.state.filteredReviews.map((review, i) => <Review key={review._id} review={review} />)}
           {this.state.filteredReviews.length === 0 && this.props.reviews.itemReviews && this.props.reviews.itemReviews.map((review, i) => <Review key={review._id} review={review} />)}
