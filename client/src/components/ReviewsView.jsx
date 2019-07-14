@@ -1,31 +1,66 @@
 import React from 'react';
 import Summary from './Summary.jsx';
 import Review from './Review.jsx';
+import Reviews from './Reviews.jsx';
 
 
 class ReviewsView extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      currentFilter: 'All',
+      filteredReviews: []
+    };
+    this.changeFilter = this.changeFilter.bind(this);
+  }
+
+  changeFilter(e) {
+    console.log(e.target.value, ' selected');
+    const selected = e.target.value;
+    let filteredReviews = [];
+    if (selected === 'All' || selected === 'Reviews') {
+      filteredReviews = this.props.filter.all;
+    } else if (selected === 'Runs Small') {
+      filteredReviews = this.props.filter.fitSmall;
+    } else if (selected === 'True to Size') {
+      filteredReviews = this.props.filter.fitTrue;
+    } else if (selected === 'Runs Large') {
+      filteredReviews = this.props.filter.fitLarge;
+    } else if (selected === 'All Fit Reviews') {
+      filteredReviews = this.props.filter.hasFit;
+    }
+    this.setState({
+      currentFilter: selected,
+      filteredReviews
+    });
   }
 
   render() {
     return (
       <div>
-        <div className="summary-container">
-          <Summary reviews={this.props.reviews.itemReviews} summaryData={this.props.summaryData} />
+        <Summary reviews={this.props.reviews.itemReviews} summaryData={this.props.summaryData} />
+        <div className="write-review-container">
+          <div className="write-review-title">What do you think about this product?</div>
+          <button className="write-review-btn">Write A Review</button>
         </div>
-        <h4>Reviews for {this.props.reviews.itemName}, itemId: {this.props.reviews.itemId}</h4>
-        <select>
-          <option>All</option>
-          <option>Reviews</option>
-          <option>Photos</option>
-          <option>Runs Small</option>
-          <option>True to Size</option>
-          <option>Runs Large</option>
-          <option>All Fit Reviews</option>
-        </select>
+        <div className="fiter-head">
+          <div className="filter-title">View</div>
+          <select className="filter-select" onChange={this.changeFilter}>
+            <option defaultValue>All</option>
+            <option>Reviews</option>
+            {/* <option>Photos</option> */}
+            <option>Runs Small</option>
+            <option>True to Size</option>
+            <option>Runs Large</option>
+            <option>All Fit Reviews</option>
+          </select>
+        </div>
+        {/* <div className="reviews-container">
+          <Reviews reviews={this.props.reviews.itemReviews}/>
+        </div> */}
         <section className='reviews'>
-          {(this.props.reviews.itemReviews) && this.props.reviews.itemReviews.map((review, i) => <Review key={review._id} review={review} />)}
+          {this.state.filteredReviews.length > 0 && this.state.filteredReviews.map((review, i) => <Review key={review._id} review={review} />)}
+          {this.state.filteredReviews.length === 0 && this.props.reviews.itemReviews && this.props.reviews.itemReviews.map((review, i) => <Review key={review._id} review={review} />)}
         </section>
       </div>
     );

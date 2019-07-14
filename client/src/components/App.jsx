@@ -8,10 +8,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'Reviews',
-      itemId: 1, //20 has 9
+      itemId: 20, //20 has 9
       reviews: []
     };
-    this.analyzeReviews = this.analyzeReviews.bind(this)
+    this.changeView = this.changeView.bind(this);
+    this.summarizeReviews = this.summarizeReviews.bind(this);
   }
 
   changeView(view) {
@@ -28,14 +29,31 @@ class App extends React.Component {
     Axios.get(`/reviews/${this.state.itemId}`)
       .then(({data}) => {
         const reviews = data;
-        this.setState({reviews}, () => { this.analyzeReviews(); } );
+        this.setState({reviews}, () => {
+          this.summarizeReviews();
+          this.filterReviews();
+        } );
       })
       .catch((err) => {
         console.log('error client getReviews');
       });
   }
 
-  analyzeReviews() {
+  filterReviews() {
+    const reviews = this.state.reviews.itemReviews;
+    const filter = {
+      all: reviews,
+      hasFit: reviews.filter(review => review.fit),
+      fitSmall: reviews.filter(review => review.fit === 'Runs Small'),
+      fitTrue: reviews.filter(review => review.fit === 'True to Size'),
+      fitLarge: reviews.filter(review => review.fit === 'Runs Large'),
+      // hasMedia: []
+    };
+
+    this.setState({ filter });
+  }
+
+  summarizeReviews() {
     const reviews = this.state.reviews.itemReviews;
     const ratings = reviews.map((review, i, arr) => review.rating);
     const avgRating = ratings.reduce((a, b) => a + b) / ratings.length;
@@ -64,14 +82,17 @@ class App extends React.Component {
     if (ratingsObj[1] !== 0) {
       ratingsObj.star1Bar = (ratingsObj[1] / reviews.length).toFixed(2) * 100 || 0;
     }
-    console.log(JSON.stringify(ratingsObj));
     const fitsArr = reviews.map((review) => review.fit);
     //avg fit is determined by weighting small at 0 reg at 50 and large at 100 and is the percent above/below avg
     const avgFit = fitsArr
-      .map((fit) => (fit === 'Runs Large') ? 100 : (fit === 'True to Size') ? 50 : 0)
+      .map((fit) => (fit === 'Runs Large') ? 100 : (fit === 'True to Size') ? 50 : 25)
       .reduce((a, b) => a + b)
       / fitsArr.length;
-    const fitsObj = {};
+    const fitsObj = {
+      'Runs Small': 0,
+      'True to Size': 0,
+      'Runs Large': 0
+    };
     for (let i = 0; i < fitsArr.length; i++) {
       if (fitsObj[fitsArr[i]]) {
         fitsObj[fitsArr[i]]++;
@@ -79,18 +100,13 @@ class App extends React.Component {
         fitsObj[fitsArr[i]] = 1;
       }
     }
-    //determine if Fits slightly small
+    //determine if Fits slightly small here
     const summaryData = {
       reviews,
       avgRating,
       ratingsObj,
       avgFit,
-      fitsObj,
-      // star1Bar,
-      // star2Bar,
-      // star3Bar,
-      // star4Bar,
-      // star5Bar
+      fitsObj
     };
     this.setState({summaryData});
   }
@@ -98,34 +114,37 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="tabs-container">
-          <ul className="tabs">
-            <li
-              className={this.state.view === 'Reviews'
-                ? 'tab-item selected'
-                : 'tab-item unselected'}
-              onClick={() => this.changeView('Reviews')}
-            >
-              Reviews
-            </li>
-            <li
-              className={this.state.view === 'Q and A'
-                ? 'tab-item selected'
-                : 'tab-item unselected'}
-              onClick={() => this.changeView('Q and A')}
-            >
-              Q and A
-            </li>
-          </ul>
-          <div className="content">
-            {this.state.view === 'Reviews'
-              ? <ReviewsView reviews={this.state.reviews} summaryData={this.state.summaryData}/>
-              : <QAView />
-            }
+        <div>Page View for {this.state.reviews.itemName}, itemId: {this.state.reviews.itemId}</div>
+        <div className="main">
+          <div className="tabs-container">
+            <ul className="tabs">
+              <li
+                className={this.state.view === 'Reviews'
+                  ? 'selected'
+                  : 'unselected'}
+                onClick={() => this.changeView('Reviews')}
+              >
+                Reviews
+              </li>
+              <li
+                className={this.state.view === 'Q and A'
+                  ? 'selected'
+                  : 'unselected'}
+                onClick={() => this.changeView('Q and A')}
+              >
+                Q and A
+              </li>
+            </ul>
+            <div className="content">
+              {this.state.view === 'Reviews'
+                ? <ReviewsView reviews={this.state.reviews} summaryData={this.state.summaryData} filter={this.state.filter}/>
+                : <QAView />
+              }
+            </div>
+            {/* <footer>
+              Here lies smelly feat.
+            </footer> */}
           </div>
-          <footer>
-            Here lies smelly feat.
-          </footer>
         </div>
       </div>
     );
