@@ -506,7 +506,7 @@ const neutReviewTitles = [
   'So durable',
   'Super Comfortable',
   'Content',
-  'Not brow',
+  'Not brown',
   'They fit, bit could be browner',
   'I can hike now',
   'These go well with my toe socks',
@@ -576,11 +576,11 @@ const badReviews = [
 
 const gen100 = function () {
   const seed = [];
-  for (let i = 1; i < 101; i++) {
+  for (let i = 1; i < 100; i++) {
 
     const itemId = i;
     const itemName = itemNames[i];
-    const numOfComments = Math.floor(Math.random() * 30);
+    const numOfComments = Math.ceil(Math.random() * 15);
     const itemReviews = [];
 
     for (let j = 0; j < numOfComments; j++) {
@@ -604,7 +604,7 @@ const gen100 = function () {
       if (hasFit) {
         const familiarity = familiarities[Math.floor(Math.random() * 9)];
         const fit = fits[Math.floor(Math.random() * 12)];
-        const size = sizes[Math.floor(Math.random() * 9)];
+        const size = sizes[Math.floor(Math.random() * 8)];
         const userHeight = Math.floor(Math.random() * 24) + 55;
         const userWeight = Math.floor(Math.random() * 160) + 110;
         itemReviews[j] = {
