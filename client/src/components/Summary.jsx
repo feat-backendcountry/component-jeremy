@@ -25,40 +25,40 @@ class Summary extends React.Component {
 
           <div className='starsBar'>
             <div className="starsBar-title">Review Summary</div><br></br>
-            <div>
+            <div className="col-3">
               <div className="starsBar-stars">5 Stars</div>
+              <div className="summary-bar bar5"></div>
               <div className="starsBar-num">
                 {this.props.summaryData.ratingsObj[5]}
               </div>
-              <div className="summary-bar bar5"></div>
             </div>
             <div>
               <div className="starsBar-stars">4 Stars</div>
+              <div className="summary-bar bar4"></div>
               <div className="starsBar-num">
                 {this.props.summaryData.ratingsObj[4]}
               </div>
-              <div className="summary-bar bar4"></div>
             </div>
             <div>
               <div className="starsBar-stars">3 Stars</div>
+              <div className="summary-bar bar3"></div>
               <div className="starsBar-num">
                 {this.props.summaryData.ratingsObj[3]}
               </div>
-              <div className="summary-bar bar3"></div>
             </div>
             <div>
               <div className="starsBar-stars">2 Stars</div>
+              <div className="summary-bar bar2"></div>
               <div className="starsBar-num">
                 {this.props.summaryData.ratingsObj[2]}
               </div>
-              <div className="summary-bar bar2"></div>
             </div>
             <div>
               <div className="starsBar-stars">1 Stars</div>
+              <div className="summary-bar bar1"></div>
               <div className="starsBar-num">
                 {this.props.summaryData.ratingsObj[1]}
               </div>
-              <div className="summary-bar bar1"></div>
             </div>
           </div>
 
@@ -114,12 +114,14 @@ class Summary extends React.Component {
           </div> */}
 
           <div className='fitBar'>
-            <div className="fitBar-title">Avg Fit Goes Here</div>
+            <div className="fitBar-title">Fits True To Size</div>
+            {/* <div>Avg Fit: {this.props.summaryData.avgFit.toFixed(2)}%</div> */}
+            <div className="fitBar-bar">
+            </div>
             <ul>
-              <li>Avg Fit: {this.props.summaryData.avgFit.toFixed(2)}%</li>
-              <li>Runs Small: {this.props.summaryData.fitsObj['Runs Small']}</li>
-              <li>True to Size: {this.props.summaryData.fitsObj['True to Size']}</li>
-              <li>Runs Large: {this.props.summaryData.fitsObj['Runs Large']}</li>
+              <li>Runs Small {this.props.summaryData.fitsObj['Runs Small']}</li>
+              <li>True to Size {this.props.summaryData.fitsObj['True to Size']}</li>
+              <li>Runs Large {this.props.summaryData.fitsObj['Runs Large']}</li>
             </ul>
           </div>
         </div>
