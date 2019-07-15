@@ -3,7 +3,12 @@ import React from 'react';
 const Review = ({ review }) =>
   <section className="review">
     <section className="reviewHead">
-      <section className="reviewRating">Stars: {review.rating} image here</section>
+      {review.rating === 5 && <section className="reviewRating">⭑⭑⭑⭑⭑</section>}
+      {review.rating === 4 && <section className="reviewRating">⭑⭑⭑⭑⭒</section>}
+      {review.rating === 3 && <section className="reviewRating">⭑⭑⭑⭒⭒</section>}
+      {review.rating === 2 && <section className="reviewRating">⭑⭑⭒⭒⭒</section>}
+      {review.rating === 1 && <section className="reviewRating">⭑⭒⭒⭒⭒</section>}
+      {/* <section className="reviewRating">{review.rating} star image here</section> */}
       <section className="reviewDate">{review.date}</section>
     </section>
     <section className="reviewTitle">{review.reviewTitle}</section>
@@ -32,20 +37,24 @@ const Review = ({ review }) =>
       </ul>
     </div>}
     <br></br>
-    <p className="reviewBody">{review.reviewBody}</p>
+    <div className="reviewBody">
+      <p>{review.reviewBody}</p>
+    </div>
     <section className="userBox">
-      <section className="userCard" className="userAvatar">
-        <img src={review.userAvatar} alt="user avatar"></img>
-        {/* <img src="https://avatars0.githubusercontent.com/u/52470968?s=200&v=4" alt="user avatar"></img> */}
-      </section>
-      <section className="userCard" className="username">{review.username}</section>
+      <div className="user-container">
+        <span className="userAvatar">
+          <img src={review.userAvatar} alt={review.username}></img>
+        </span>
+        <span className="username">
+          <a href="/">{review.username}</a>
+        </span>
+      </div>
     </section>
     <section className="commentBox">
-      <section className="commentArea">Leave a Comment</section>
-      <section className="commentArea">Flag Inapproprite</section>
-      <section className="commentArea">Like a Comment</section>
+      <section className="commentArea leavecomment">Leave a comment...</section>
+      <section className="commentArea flagcomment">Flag inappropriate ⚑</section>
+      <section className="commentArea likecomment">👍 0</section>
     </section>
-    <br></br>
     {/* <div>{review.username} {review.userHeight && `is ${review.userHeight}"" and ${review.userWeight}lbs.`}</div> */}
   </section>;
 

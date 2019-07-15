@@ -43,7 +43,7 @@ class ReviewsView extends React.Component {
           {/* <button className="write-review-btn">Write A Review</button> */}
           <a className="write-review-btn" href="/">Write A Review</a>
         </div>
-        <div className="fiter-container">
+        <div className="filter-container">
           <div className="filter-title">View</div>
           <select className="filter-select" onChange={this.changeFilter}>
             <option defaultValue>All</option>

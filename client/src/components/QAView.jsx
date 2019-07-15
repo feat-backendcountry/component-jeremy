@@ -3,7 +3,8 @@ import React from 'react';
 const QAView = (props) =>
   <div>
     <div className="write-review-title" >Have questions about this product?</div>
-    <button className="write-review-btn">Ask a Question</button>
+    {/* <button className="write-review-btn">Ask a Question</button> */}
+    <a className="write-review-btn" href="/">Ask a Question</a>
     {/* <br></br>
     <select>
       <option>Questions</option>
