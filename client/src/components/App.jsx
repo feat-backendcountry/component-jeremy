@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'Reviews',
-      itemId: 95, //Math.floor(Math.random() * 100), //randomly chooses an item
+      itemId: Math.floor(Math.random() * 100), //randomly chooses an item
       reviews: []
     };
     this.changeView = this.changeView.bind(this);

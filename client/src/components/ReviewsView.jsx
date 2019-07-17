@@ -9,9 +9,12 @@ class ReviewsView extends React.Component {
     super(props);
     this.state = {
       currentFilter: 'All',
-      filteredReviews: []
+      filteredReviews: [],
+      visable: 5,
+      filter: false
     };
     this.changeFilter = this.changeFilter.bind(this);
+    this.loadMore = this.loadMore.bind(this);
   }
 
   changeFilter(e) {
@@ -30,8 +33,14 @@ class ReviewsView extends React.Component {
     }
     this.setState({
       currentFilter: selected,
-      filteredReviews
+      filteredReviews,
+      filter: true
     });
+  }
+
+  loadMore() {
+    const visable = this.state.visable + 5;
+    this.setState({visable});
   }
 
   render() {
@@ -56,13 +65,22 @@ class ReviewsView extends React.Component {
           </select>
         </div>
         <section className='reviews'>
-          {this.state.filteredReviews.length > 0 && this.state.filteredReviews.map((review, i) => <Review key={review._id} review={review} />)}
-          {this.state.filteredReviews.length === 0 && this.props.reviews.itemReviews && this.props.reviews.itemReviews.map((review, i) => <Review key={review._id} review={review} />)}
+          {this.state.filter &&
+            this.state.filteredReviews.map((review, i) => <Review key={review._id} review={review} />)
+          }
+          {this.state.filter && this.state.filteredReviews.length > this.state.visable &&
+            <a className="load-btn" onClick={this.loadMore}>Load More</a>
+          }
+
+          {!this.state.filter && this.props.reviews.itemReviews && this.state.visable &&
+            this.props.reviews.itemReviews.slice(0, this.state.visible).map((review, i) => <Review key={review._id} review={review} />)}
+          {!this.state.filter && this.props.reviews.itemReviews && this.props.reviews.itemReviews.length > this.state.visable &&
+            <a className="load-btn" onClick={this.loadMore}>Load More</a>
+          }
         </section>
       </div>
     );
   }
 }
-
 
 export default ReviewsView;
