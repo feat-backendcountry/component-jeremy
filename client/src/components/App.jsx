@@ -129,13 +129,15 @@ class App extends React.Component {
               </li>
               <li></li>
               <li></li>
+              <li></li>
+              <li></li>
               <li
-                className={this.state.view === 'Q and A'
+                className={this.state.view === 'Q & A'
                   ? 'selected'
                   : 'unselected'}
-                onClick={() => this.changeView('Q and A')}
+                onClick={() => this.changeView('Q & A')}
               >
-                Q and A
+                Q & A
               </li>
             </ul>
             <div className="content">

@@ -169,7 +169,7 @@ Summary block
   -webkit-font-smoothing: antialiased;
 }
 
-.stars {
+.col-3 {
 
 }
 
@@ -210,19 +210,21 @@ Summary block
   background-color: transparent;
   text-align: left;
   display: block;
+  position: relative;
 }
 
 .starsBar-num {
   font-size: 12px;
   height: 10px;
   line-height: 20px;
-  width: 5%;
+  width: 12px;
   transition: color 0.3s ease;
   color: #666;
   text-decoration: none;
   background-color: transparent;
-  text-align: left;
-  display: inline-block
+  text-align: center;
+  display: inline-block;
+  position: absolute;
 }
 
 .starsBar-reviews-number {
@@ -243,11 +245,11 @@ Summary block
   height: 6px;
   width: 75%;
   max-width: 800px;
-  margin: 7px 1px 3px auto;
-  line-height: 30px;
+  /* margin: 7px 1px 3px 1px; */
+  line-height: 15px;
   font-size: 16px;
   color: white;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 5px;
   position: relative;
   display: inline-block;
 }
@@ -311,6 +313,7 @@ Summary block
 .fitBar {
   display: inline-block;
   width: 33%;
+  height: auto;
 }
 
 .fitBar-title {
@@ -318,14 +321,8 @@ Summary block
   font-weight: 700;
   height: 20px;
   line-height: 20px;
-  margin-block-end: 0px;
-  margin-block-start: 0px;
-  margin-bottom: 0px;
-  margin-inline-end: 0px;
-  margin-inline-start: 40px;
   margin-left: 40px;
-  margin-right: 0px;
-  margin-top: 0px;
+  margin-bottom: 40px;
   text-align: left;
   text-size-adjust: 100%;
   width: 301.547px;
@@ -355,7 +352,6 @@ Summary block
   line-height: 30px;
   font-size: 16px;
   color: white;
-  padding: 0 0 0 10px;
   position: relative;
   display: block;
 }
@@ -374,17 +370,12 @@ Summary block
   content: '';
   background: #000;
   height: 8px;
-  /* transition: 0.7s; */
   width: 25%;
-  /* -webkit-animation: bar-before 1 1.8s; */
   position: absolute;
   top: 0;
   left: 30%; /* should be variable */
   z-index: -1;
 }
-
-
-
 
 
 /*
@@ -418,7 +409,7 @@ write a review
   color: #222;
   display: inline-block;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   height: 35px;
   line-height: 2.3;
   min-height: 30px;
@@ -426,11 +417,11 @@ write a review
   overflow: hidden;
   padding: 0 17px;
   text-align: center;
-  text-transform: capitalize;
   vertical-align: middle;
   border: 1px solid #222;
   padding: 0 14px;
-  text-decoration: none
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .write-review-btn:hover {
@@ -474,32 +465,9 @@ reviews
 
 .review {
   background-color: rgb(255, 255, 255);
-  border-bottom-color: rgb(194, 194, 194);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-image-outset: 0px;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  border-left-color: rgb(194, 194, 194);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-right-color: rgb(194, 194, 194);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgb(194, 194, 194);
-  border-top-style: solid;
-  border-top-width: 1px;
+  border: 1px solid rgb(194, 194, 194);
   margin-bottom: 30px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
   min-height: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
   position: relative;
   text-size-adjust: 100%;
   width: auto;
