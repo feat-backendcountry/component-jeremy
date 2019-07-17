@@ -34,7 +34,8 @@ class ReviewsView extends React.Component {
     this.setState({
       currentFilter: selected,
       filteredReviews,
-      filter: true
+      filter: true,
+      visable: 5
     });
   }
 
@@ -50,7 +51,7 @@ class ReviewsView extends React.Component {
         <div className="write-review-container">
           <div className="write-review-title">What do you think about this product?</div>
           {/* <button className="write-review-btn">Write A Review</button> */}
-          <a className="write-review-btn" href="/">Write A Review</a>
+          <a className="write-review-btn" >Write A Review</a>
         </div>
         <div className="filter-container">
           <div className="filter-title">View</div>
