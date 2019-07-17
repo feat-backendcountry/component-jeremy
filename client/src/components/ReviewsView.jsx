@@ -9,7 +9,7 @@ class ReviewsView extends React.Component {
     super(props);
     this.state = {
       currentFilter: 'All',
-      filteredReviews: [],
+      filteredReviews: this.props.reviews.itemReviews,
       visable: 5,
       filter: false
     };
@@ -65,15 +65,15 @@ class ReviewsView extends React.Component {
           </select>
         </div>
         <section className='reviews'>
-          {this.state.filter &&
-            this.state.filteredReviews.map((review, i) => <Review key={review._id} review={review} />)
+          {this.state.filter && this.state.visable &&
+            this.state.filteredReviews.slice(0, this.state.visable).map((review, i) => <Review key={review._id} review={review} />)
           }
           {this.state.filter && this.state.filteredReviews.length > this.state.visable &&
             <a className="load-btn" onClick={this.loadMore}>Load More</a>
           }
 
           {!this.state.filter && this.props.reviews.itemReviews && this.state.visable &&
-            this.props.reviews.itemReviews.slice(0, this.state.visible).map((review, i) => <Review key={review._id} review={review} />)}
+            this.props.reviews.itemReviews.slice(0, this.state.visable).map((review, i) => <Review key={review._id} review={review} />)}
           {!this.state.filter && this.props.reviews.itemReviews && this.props.reviews.itemReviews.length > this.state.visable &&
             <a className="load-btn" onClick={this.loadMore}>Load More</a>
           }
