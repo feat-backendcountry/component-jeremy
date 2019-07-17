@@ -36,7 +36,7 @@
   line-height: 20px;
   display: block;
   color: #000;
-  font-family: AktivGrotesk, Helvetica, Arial, sans-serif;
+  font-family: 'AktivGrotesk', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 20px;
@@ -47,6 +47,11 @@
   box-sizing: border-box;
   float: left;
   text-align: center;
+}
+
+.content {
+  width: 80%;
+  margin: 0 10%
 }
 
 /*
@@ -387,22 +392,19 @@ Summary block
 write a review
 
 */
+
 .write-review-container {
   margin-bottom: 20px;
 }
 
 .write-review-title {
   font-size: 28px;
-  font-family: CaslonGraphique,serif;
+  font-family: 'CaslonGraphique', serif;
   font-weight: 800;
   margin: 20px 0;
   text-transform: none;
   line-height: 1.25;
   display: block;
-  margin-block-start: 1.33em;
-  margin-block-end: 1.33em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
   text-align: center;
 }
 
@@ -596,7 +598,7 @@ reviews
   line-height: 1.25;
   font-family: CaslonGraphique,serif;
   font-weight: 800;
-  font-size: 1.17em;
+  /* font-size: 1.17em; */
   /* margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
@@ -674,4 +676,35 @@ reviews
 .likecomment {
   text-align: end;
   width: 25%;
+}
+
+.load-btn {
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s;
+  background-color: #fff;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #222;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 2.3;
+  min-height: 30px;
+  min-width: 200px;
+  overflow: hidden;
+  padding: 0 17px;
+  text-align: center;
+  text-transform: capitalize;
+  vertical-align: middle;
+  border: 1px solid #222;
+  padding: 0 14px;
+  text-decoration: none;
+  margin: 0 38%;
+}
+
+.load-btn:hover {
+    background: #222;
+    color: #fff
 }
