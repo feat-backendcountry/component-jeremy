@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdThumbUp, MdFlag } from 'react-icons/md';
 
 const Review = ({ review }) =>
   <section className="review">
@@ -52,8 +53,8 @@ const Review = ({ review }) =>
     </section>
     <section className="commentBox">
       <section className="commentArea leavecomment">Leave a comment...</section>
-      <section className="commentArea flagcomment">Flag inappropriate ⚑</section>
-      <section className="commentArea likecomment">👍 0</section>
+      <section className="commentArea flagcomment">Flag inappropriate <MdFlag /></section>
+      <section className="commentArea likecomment"><MdThumbUp /> 0</section>
     </section>
     {/* <div>{review.username} {review.userHeight && `is ${review.userHeight}"" and ${review.userWeight}lbs.`}</div> */}
   </section>;
