@@ -2,6 +2,7 @@ import React from 'react';
 import Summary from './Summary.jsx';
 import Review from './Review.jsx';
 import Filter from './Filter.jsx';
+import AltFilter from './AltFilter.jsx';
 
 
 class ReviewsView extends React.Component {
@@ -53,7 +54,8 @@ class ReviewsView extends React.Component {
           {/* <button className="write-review-btn">Write A Review</button> */}
           <a className="write-review-btn" >Write A Review</a>
         </div>
-        <Filter changeFilter={this.changeFilter}/>
+        {/* <Filter changeFilter={this.changeFilter}/> */}
+        <AltFilter />
         <section className='reviews'>
           {this.state.filter && this.state.visable &&
             this.state.filteredReviews.slice(0, this.state.visable).map((review, i) => <Review key={review._id} review={review} />)
