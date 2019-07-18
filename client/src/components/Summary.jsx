@@ -68,9 +68,9 @@ class Summary extends React.Component {
             <div className="fitBar-bar">
             </div>
             <ul>
-              <li>Runs Small {this.props.summaryData.fitsObj['Runs Small']}</li>
-              <li>True to Size {this.props.summaryData.fitsObj['True to Size']}</li>
-              <li>Runs Large {this.props.summaryData.fitsObj['Runs Large']}</li>
+              <li>Runs Small-{this.props.summaryData.fitsObj['Runs Small']}</li>
+              <li>True to Size-{this.props.summaryData.fitsObj['True to Size']}</li>
+              <li>Runs Large-{this.props.summaryData.fitsObj['Runs Large']}</li>
             </ul>
           </div>
         </div>
