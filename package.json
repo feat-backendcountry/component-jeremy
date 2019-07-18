@@ -7,25 +7,36 @@
   "engines": {
     "node": ">=6.13.0"
   },
+  "jest": {
+    "preset": "@shelf/jest-mongodb"
+  },
   "scripts": {
     "seed": "node database/seed.js",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "build": "webpack -d --watch",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.6.3",
     "nodemon": "^1.19.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@shelf/jest-mongodb": "^1.1.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^24.8.0",
     "morgan": "^1.9.1",
-    "webpack": "^4.35.2"
+    "webpack": "^2.2.1",
+    "lodash": ">=4.17.13"
   }
 }
