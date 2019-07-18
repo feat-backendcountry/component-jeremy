@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const db = require('../database/dbHelpers.js');
+var cors = require('cors');
 
 // const router = require('');
 const model = require('../database/index.js');
@@ -14,6 +15,7 @@ const port = 4242;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
