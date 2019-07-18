@@ -408,6 +408,30 @@ const usernames = [
   'Jordan Montes'
 ];
 
+const userAvatars = [
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/1.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/2.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/3.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/4.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/5.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/6.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/7.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/8.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/9.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/10.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/11.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/12.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/13.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/14.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/15.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/16.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/17.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/18.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/19.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/20.jpeg`,
+  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/21.jpeg`
+];
+
 const ratings = [1, 2, 3, 4, 5];
 
 const months = [
@@ -586,7 +610,7 @@ const gen100 = function () {
     for (let j = 0; j < numOfComments; j++) {
 
       const username = usernames[Math.floor(Math.random() * 300)];
-      const userAvatar = 'http://lorempixel.com/150/150/';
+      const userAvatar = 'http://lorempixel.com/150/150/'; //userAvatars[Math.floor(Math.random() * 21)];
       const month = months[Math.floor(Math.random() * 12)];
       const day = days[Math.floor(Math.random() * 28)];
       const year = years[Math.floor(Math.random() * 11)];
@@ -653,23 +677,6 @@ const seedFunction = () => {
 };
 
 seedFunction();
-
-
-
-/*
-      if (rating === 5) {
-        const reviewTitle = goodReviewTitles[Math.floor(Math.random() * 17)];
-        const reviewBody = goodReviews[Math.floor(Math.random() * 9)];
-      } else if (rating >= 3) {
-        const reviewTitle = neutReviewTitles[Math.floor(Math.random() * 17)];
-        const reviewBody = neutReviews[Math.floor(Math.random() * 9)];
-      } else {
-        const reviewTitle = badReviewTitles[Math.floor(Math.random() * 17)];
-        const reviewBody = badReviews[Math.floor(Math.random() * 9)];
-      }
-*/
-
-//<div style="width: 66%" for bar chart
 
 //Math.floor(Math.random() * (max - min + 1)) + min;
 //random range includes max and min
