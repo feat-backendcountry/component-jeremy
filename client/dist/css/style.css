@@ -68,19 +68,8 @@ View Selector
   height: 40px auto;
   line-height: 20px;
   list-style-type: none;
-  margin-block-end: 10px;
-  margin-block-start: 20px;
   margin-bottom: 10px;
-  margin-inline-end: 0px;
-  margin-inline-start: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
   margin-top: 20px;
-  padding-bottom: 0px;
-  padding-inline-start: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
   text-size-adjust: 100%;
   width: auto;
   -webkit-font-smoothing: antialiased;
@@ -116,17 +105,9 @@ Summary block
   display: block;
   font-size: 14px;
   height: auto;
-  line-height: 20px;
-  margin-bottom: 30px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 30px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
-  text-size-adjust: 100%;
   width: auto;
+  line-height: 20px;
+  margin: 30px 0px;
   text-align: center;
 }
 
@@ -140,33 +121,20 @@ Summary block
 }
 
 .avgRating-title {
-  font-family: AktivGrotesk,Helvetica,Arial,sans-serif;
+  font-family: AktivGrotesk, Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
   margin: 10px 0;
   display: block;
   line-height: 19.44px;
-  margin-block-end: 0px;
-  margin-block-start: 10px;
-  margin-bottom: 0px;
-  margin-inline-end: 0px;
-  margin-inline-start: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 10px;
-  text-align: center;
-  text-size-adjust: 100%;
+  margin: 10px 0 0;
 }
 
 .avgRating-subtitle {
   color: rgb(102, 102, 102);
   display: inline;
-  font-family: AktivGrotesk, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  text-align: center;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
 }
 
 .starsBar {
@@ -176,20 +144,13 @@ Summary block
 }
 
 .starsBar-title {
-  font-family: AktivGrotesk,Helvetica,Arial,sans-serif;
+  font-family: AktivGrotesk, Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
   margin: 10px 0;
   display: block;
   line-height: 19.44px;
-  margin-block-end: 0px;
-  margin-block-start: 10px;
-  margin-bottom: 0px;
-  margin-inline-end: 0px;
-  margin-inline-start: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 10px;
+  margin: 10px 0 0;
   text-align: left;
   text-size-adjust: 100%;
 }
@@ -229,11 +190,9 @@ Summary block
   font-weight: 400;
   height: 14px;
   line-height: 14px;
-  /* margin-left: 5px; */
   text-align: left;
   text-size-adjust: 100%;
   width: 15%;
-  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -241,7 +200,6 @@ Summary block
   height: 6px;
   width: 75%;
   max-width: 800px;
-  /* margin: 7px 1px 3px 1px; */
   line-height: 15px;
   font-size: 16px;
   color: white;
@@ -264,25 +222,13 @@ Summary block
   content: '';
   background: #000;
   height: 6px;
-  /* transition: 0.7s; */
   display: block;
   width: 100%;
-  /* -webkit-animation: bar-before 1 1.8s; */
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 }
-
-/* @-webkit-keyframes bar-before{
-  0%{
-    width: 0px;
-  }
-  100%{
-    width: 100%;
-  }
-} */
-
 
 /* should be variables */
 .bar5::after{
@@ -441,8 +387,6 @@ filter
   padding: 0 17%
 }
 
-
-
 .filter-select {
     display: block;
     font-size: 12px;
@@ -490,7 +434,7 @@ reviews
 .reviews {
   display: inline-block;
   margin: 0px 15%;
-  padding: 20px 5px 60px;
+  padding: 20px 5px 0;
   box-sizing: border-box;
   width: 66%;
   text-align: left;
@@ -516,7 +460,6 @@ reviews
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  /* padding-inline-start: 2px; */
   padding-left: 10px
 }
 
@@ -524,7 +467,6 @@ reviews
   margin: 0 0 5px;
   display: list-item;
   text-align: -webkit-match-parent;
-
 }
 
 .reviewFit-title {
@@ -559,7 +501,6 @@ reviews
 .reviewFit-desc-short {
   width: 50px;
   display: inline-block;
-
 }
 
 .reviewHead {
@@ -578,6 +519,7 @@ reviews
   text-align: left;
   margin-left: 10px;
   font-size: 20px;
+  cursor: default
 }
 
 .reviewDate {
@@ -600,11 +542,6 @@ reviews
   line-height: 1.25;
   font-family: CaslonGraphique,serif;
   font-weight: 800;
-  /* font-size: 1.17em; */
-  /* margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px; */
 }
 
 .reviewBody p{
@@ -637,6 +574,7 @@ reviews
   color: #222;
   font-weight: 600;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .username a {
@@ -778,3 +716,35 @@ dropdown test
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.static-image {
+  display: block;
+  text-align: center;
+  background-size: contain;
+  width: 100%;
+  z-index: -1;
+}
+
+.qa-container {
+  margin-bottom: 30%
+}
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-image {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 422px;
+  height: 471px;
+}
+
