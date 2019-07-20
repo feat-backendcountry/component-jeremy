@@ -21,7 +21,7 @@ class App extends React.Component {
 
   componentWillMount() {
     var parsedUrl = new URL(window.location.href);
-    const itemId = +parsedUrl.searchParams.get('id');
+    const itemId = +parsedUrl.searchParams.get('id') || 1;
     this.setState({itemId}, () => this.getReviews());
   }
 
