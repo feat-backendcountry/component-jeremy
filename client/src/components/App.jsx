@@ -32,15 +32,19 @@ class App extends React.Component {
   }
 
   showModal() {
-    this.setState({ showModal: true });
+    this.setState({ 
+      showModal: true 
+    });
   }
 
   hideModal() {
-    this.setState({ showModal: false });
+    this.setState({ 
+      showModal: false 
+    });
   }
 
   getReviews() {
-    Axios.get(`http://localhost:4242/reviews/${this.state.itemId}`)
+    Axios.get(`http://localhost:4002/reviews/${this.state.itemId}`)
       .then(({data}) => {
         const reviews = data;
         this.setState({reviews}, () => {
@@ -85,7 +89,6 @@ class App extends React.Component {
     ratingsObj.star2Bar = (ratingsObj[2] !== 0) ? (ratingsObj[2] / reviews.length).toFixed(2) * 100 || 0 : 0;
     ratingsObj.star1Bar = (ratingsObj[1] !== 0) ? (ratingsObj[1] / reviews.length).toFixed(2) * 100 || 0 : 0;
     const fitsArr = reviews.map((review) => review.fit);
-    //avg fit is determined by weighting small at 0 reg at 50 and large at 100 and is the percent above/below avg
     const avgFit = fitsArr
       .map((fit) => (fit === 'Runs Large') ? 100 : (fit === 'True to Size') ? 50 : 25)
       .reduce((a, b) => a + b)
@@ -102,7 +105,6 @@ class App extends React.Component {
         fitsObj[fitsArr[i]] = 1;
       }
     }
-    //determine if Fits slightly small here
     const summaryData = {
       reviews,
       avgRating,
@@ -116,9 +118,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <img className='static-image' src='https://i.imgur.com/YbEWWQ7.png' alt='static image component' />
-        <img className='static-image' src='https://i.imgur.com/dWKwNiQ.png' alt='static image component' />
-        {/* <div>Page View for {this.state.reviews.itemName}, itemId: {this.state.reviews.itemId} has {this.state.reviews.itemReviews && this.state.reviews.itemReviews.length} reviews.</div> */}
         {this.state.showModal &&
           <div className='modal-container'>
             <img
@@ -165,7 +164,6 @@ class App extends React.Component {
                 : <QAView showModal={this.showModal} />
               }
             </div>
-            <img className='static-image' src='https://i.imgur.com/y0C7QGM.png' alt='static image component' />
           </div>
         </div>
       </div>
