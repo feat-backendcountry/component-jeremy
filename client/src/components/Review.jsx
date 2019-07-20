@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdThumbUp, MdFlag } from 'react-icons/md';
 
-const Review = ({ review }) =>
+const Review = ({ review, showModal }) =>
   <section className="review">
     <section className="reviewHead">
       {review.rating === 5 && <section className="reviewRating">⭑⭑⭑⭑⭑</section>}
@@ -9,7 +9,6 @@ const Review = ({ review }) =>
       {review.rating === 3 && <section className="reviewRating">⭑⭑⭑⭒⭒</section>}
       {review.rating === 2 && <section className="reviewRating">⭑⭑⭒⭒⭒</section>}
       {review.rating === 1 && <section className="reviewRating">⭑⭒⭒⭒⭒</section>}
-      {/* <section className="reviewRating">{review.rating} star image here</section> */}
       <section className="reviewDate">{review.date}</section>
     </section>
     <section className="reviewTitle">{review.reviewTitle}</section>
@@ -47,16 +46,15 @@ const Review = ({ review }) =>
           <img src={review.userAvatar} alt={review.username}></img>
         </span>
         <span className="username">
-          <a href="/">{review.username}</a>
+          <a onClick={showModal}>{review.username}</a>
         </span>
       </div>
     </section>
     <section className="commentBox">
-      <section className="commentArea leavecomment">Leave a comment...</section>
-      <section className="commentArea flagcomment">Flag inappropriate <MdFlag /></section>
-      <section className="commentArea likecomment"><MdThumbUp /> 0</section>
+      <section onClick={showModal} className="commentArea leavecomment">Leave a comment...</section>
+      <section onClick={showModal} className="commentArea flagcomment">Flag inappropriate <MdFlag /></section>
+      <section onClick={showModal} className="commentArea likecomment"><MdThumbUp /> 0</section>
     </section>
-    {/* <div>{review.username} {review.userHeight && `is ${review.userHeight}"" and ${review.userWeight}lbs.`}</div> */}
   </section>;
 
 export default Review;
