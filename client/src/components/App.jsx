@@ -8,22 +8,35 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'Reviews',
-      itemId: Math.floor(Math.random() * 100), //randomly chooses an item
-      reviews: []
+      reviews: [],
+      showModal: false
     };
+    this.getReviews = this.getReviews.bind(this);
     this.changeView = this.changeView.bind(this);
+    this.filterReviews = this.filterReviews.bind(this);
     this.summarizeReviews = this.summarizeReviews.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
 
-
-  componentDidMount() {
-    this.getReviews();
+  componentWillMount() {
+    var parsedUrl = new URL(window.location.href);
+    const itemId = +parsedUrl.searchParams.get('id');
+    this.setState({itemId}, () => this.getReviews());
   }
 
   changeView(view) {
     this.setState({
       view: view
     });
+  }
+
+  showModal() {
+    this.setState({ showModal: true });
+  }
+
+  hideModal() {
+    this.setState({ showModal: false });
   }
 
   getReviews() {
@@ -66,23 +79,11 @@ class App extends React.Component {
         ratingsObj[ratings[i]] = 1;
       }
     }
-    if (ratingsObj[5] !== 0) {
-      ratingsObj.star5Bar = (ratingsObj[5] / reviews.length).toFixed(2) * 100 || 0;
-    } else {
-      ratingsObj.star5Bar = 0;
-    }
-    if (ratingsObj[4] !== 0) {
-      ratingsObj.star4Bar = (ratingsObj[4] / reviews.length).toFixed(2) * 100 || 0;
-    }
-    if (ratingsObj[3] !== 0) {
-      ratingsObj.star3Bar = (ratingsObj[3] / reviews.length).toFixed(2) * 100 || 0;
-    }
-    if (ratingsObj[2] !== 0) {
-      ratingsObj.star2Bar = (ratingsObj[2] / reviews.length).toFixed(2) * 100 || 0;
-    }
-    if (ratingsObj[1] !== 0) {
-      ratingsObj.star1Bar = (ratingsObj[1] / reviews.length).toFixed(2) * 100 || 0;
-    }
+    ratingsObj.star5Bar = (ratingsObj[5] !== 0) ? (ratingsObj[5] / reviews.length).toFixed(2) * 100 || 0 : 0;
+    ratingsObj.star4Bar = (ratingsObj[4] !== 0) ? (ratingsObj[4] / reviews.length).toFixed(2) * 100 || 0 : 0;
+    ratingsObj.star3Bar = (ratingsObj[3] !== 0) ? (ratingsObj[3] / reviews.length).toFixed(2) * 100 || 0 : 0;
+    ratingsObj.star2Bar = (ratingsObj[2] !== 0) ? (ratingsObj[2] / reviews.length).toFixed(2) * 100 || 0 : 0;
+    ratingsObj.star1Bar = (ratingsObj[1] !== 0) ? (ratingsObj[1] / reviews.length).toFixed(2) * 100 || 0 : 0;
     const fitsArr = reviews.map((review) => review.fit);
     //avg fit is determined by weighting small at 0 reg at 50 and large at 100 and is the percent above/below avg
     const avgFit = fitsArr
@@ -115,8 +116,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div>Page View for {this.state.reviews.itemName}, itemId: {this.state.reviews.itemId} has {this.state.reviews.itemReviews && this.state.reviews.itemReviews.length} reviews.</div>
+        <img className='static-image' src='https://i.imgur.com/YbEWWQ7.png' alt='static image component' />
+        <img className='static-image' src='https://i.imgur.com/dWKwNiQ.png' alt='static image component' />
+        {/* <div>Page View for {this.state.reviews.itemName}, itemId: {this.state.reviews.itemId} has {this.state.reviews.itemReviews && this.state.reviews.itemReviews.length} reviews.</div> */}
+        {this.state.showModal &&
+          <div className='modal-container'>
+            <img
+              className='modal-image'
+              src='https://i.imgur.com/kL2hUS1.png'
+              alt='static image component'
+              onClick={this.hideModal}
+            />
+          </div>
+        }
         <div className="main">
+          <div className="reviews-top-boarder"></div>
           <div className="tabs-container">
             <ul className="tabs">
               <li
@@ -142,13 +156,16 @@ class App extends React.Component {
             </ul>
             <div className="content">
               {this.state.view === 'Reviews'
-                ? <ReviewsView reviews={this.state.reviews} summaryData={this.state.summaryData} filter={this.state.filter}/>
-                : <QAView />
+                ? <ReviewsView
+                  reviews={this.state.reviews}
+                  summaryData={this.state.summaryData}
+                  filter={this.state.filter}
+                  showModal={this.showModal}
+                />
+                : <QAView showModal={this.showModal} />
               }
             </div>
-            {/* <footer>
-              Here lies smelly feat.
-            </footer> */}
+            <img className='static-image' src='https://i.imgur.com/y0C7QGM.png' alt='static image component' />
           </div>
         </div>
       </div>
