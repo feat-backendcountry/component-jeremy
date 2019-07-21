@@ -119,12 +119,12 @@ class App extends React.Component {
     return (
       <div className="app">
         {this.state.showModal &&
-          <div className='modal-container'>
+          <div className='modal-container' onClick={this.hideModal}>
             <img
               className='modal-image'
               src='https://i.imgur.com/kL2hUS1.png'
               alt='static image component'
-              onClick={this.hideModal}
+              // onClick={this.hideModal}
             />
           </div>
         }
