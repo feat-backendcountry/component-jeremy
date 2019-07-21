@@ -409,27 +409,27 @@ const usernames = [
 ];
 
 const userAvatars = [
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/1.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/2.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/3.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/4.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/5.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/6.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/7.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/8.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/9.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/10.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/11.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/12.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/13.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/14.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/15.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/16.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/17.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/18.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/19.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/20.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/21.jpeg`
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/1.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/2.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/3.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/4.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/5.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/6.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/7.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/8.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/9.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/10.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/11.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/12.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/13.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/14.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/15.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/16.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/17.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/18.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/19.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/20.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/21.jpeg'
 ];
 
 const ratings = [1, 2, 3, 4, 5];
@@ -450,7 +450,7 @@ const months = [
 ];
 
 const days = [];
-for (let i = 0; i < 29; i++) {
+for (let i = 1; i < 29; i++) {
   days.push(i);
 }
 
@@ -463,7 +463,7 @@ const fits = [
   'Runs Small',
   'Runs Small',
   'Runs Small',
-  'Runs Small',
+  'True to Size',
   'True to Size',
   'True to Size',
   'True to Size',
@@ -598,24 +598,32 @@ const badReviews = [
   'How much do these weigh? Beacuse I\'m headed to Africa and there is a limit to how much I can take on the tiny airplanes I\'m forced to fly in.'
 ];
 
+const compare = function (a, b) {
+  const yearA = +a.date.slice(-4);
+  const yearB = +b.date.slice(-4);
+  let comparison = 0;
+  if (yearA > yearB) {
+    comparison = -1;
+  } else if (yearA < yearB) {
+    comparison = 1;
+  }
+  return comparison;
+};
+
 const gen100 = function () {
   const seed = [];
-  for (let i = 1; i < 100; i++) {
-
+  for (let i = 1; i <= 100; i++) {
     const itemId = i;
     const itemName = itemNames[i];
-    const numOfComments = Math.ceil(Math.random() * 15);
+    const numOfComments = Math.ceil(Math.random() * 20);
     const itemReviews = [];
-
     for (let j = 0; j < numOfComments; j++) {
-
       const username = usernames[Math.floor(Math.random() * 300)];
-      const userAvatar = 'http://lorempixel.com/150/150/'; //userAvatars[Math.floor(Math.random() * 21)];
+      const userAvatar = userAvatars[Math.floor(Math.random() * 21)]; //'http://lorempixel.com/150/150/';
       const month = months[Math.floor(Math.random() * 12)];
       const day = days[Math.floor(Math.random() * 28)];
       const year = years[Math.floor(Math.random() * 11)];
       const date = `${month} ${day}, ${year}`;
-
       const rating = ratings[Math.floor(Math.random() * 5)];
       const reviewTitle = (rating === 5) ? goodReviewTitles[Math.floor(Math.random() * 17)]
         : (rating >= 3) ? neutReviewTitles[Math.floor(Math.random() * 17)]
@@ -623,13 +631,15 @@ const gen100 = function () {
       const reviewBody = (rating === 5) ? goodReviews[Math.floor(Math.random() * 9)]
         : (rating >= 3) ? neutReviews[Math.floor(Math.random() * 9)]
           : badReviews[Math.floor(Math.random() * 9)];
-
-      const hasFit = [false, true][Math.floor(Math.random() * 2)];
+      const hasFit = [false, true, true][Math.floor(Math.random() * 3)];
       if (hasFit) {
-        const familiarity = familiarities[Math.floor(Math.random() * 9)];
+        const familiarity = familiarities[Math.floor(Math.random() * 10)];
         const fit = fits[Math.floor(Math.random() * 12)];
         const size = sizes[Math.floor(Math.random() * 8)];
-        const userHeight = Math.floor(Math.random() * 24) + 55;
+        const totalInches = Math.floor(Math.random() * 20) + 59;
+        const ft = Math.floor(totalInches / 12);
+        const inch = totalInches - (ft * 12);
+        const userHeight = `${ft}' ${inch}"`;
         const userWeight = Math.floor(Math.random() * 160) + 110;
         itemReviews[j] = {
           rating,
@@ -655,7 +665,7 @@ const gen100 = function () {
         };
       }
     }
-
+    itemReviews.sort(compare);
     seed[i] = {
       itemId,
       itemName,
