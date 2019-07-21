@@ -195,6 +195,10 @@ Summary block
   width: 15%;
 }
 
+.star-row {
+  height: 15px;
+  display: block
+}
 
 .summary-bar{
   height: 6px;
@@ -203,7 +207,7 @@ Summary block
   line-height: 15px;
   font-size: 16px;
   color: white;
-  padding: 0 0 0 5px;
+  padding: 0 0 0 3px;
   position: relative;
   display: inline-block;
 }
@@ -218,6 +222,7 @@ Summary block
   z-index: -2;
   background: #c2c2c2;
 }
+
 .summary-bar::after{
   content: '';
   background: #000;
@@ -560,7 +565,9 @@ reviews
 
 .userAvatar {
   display: inline-block;
-  padding-right: 10px
+  padding-right: 10px;
+  position: relative;
+  margin: 5px auto;
 }
 
 .userAvatar img {
@@ -571,6 +578,7 @@ reviews
 
 .username {
   display: inline-block;
+  position: absolute;
   color: #222;
   font-weight: 600;
   font-size: 14px;
