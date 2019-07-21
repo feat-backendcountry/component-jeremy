@@ -21,7 +21,7 @@ class App extends React.Component {
 
   componentWillMount() {
     var parsedUrl = new URL(window.location.href);
-    const itemId = +parsedUrl.searchParams.get('id') || 1;
+    const itemId = +parsedUrl.searchParams.get('id') || Math.ceil(Math.random() * 100) + 1;
     this.setState({itemId}, () => this.getReviews());
   }
 
@@ -32,14 +32,14 @@ class App extends React.Component {
   }
 
   showModal() {
-    this.setState({ 
-      showModal: true 
+    this.setState({
+      showModal: true
     });
   }
 
   hideModal() {
-    this.setState({ 
-      showModal: false 
+    this.setState({
+      showModal: false
     });
   }
 
