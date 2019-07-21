@@ -28,11 +28,11 @@ const Review = ({ review, showModal }) =>
         </li>
         <li className="reviewHeight">
           <span className="reviewFit-title-short">Height: </span>
-          <span className="reviewFit-desc-short">{review.userHeight}"</span>
+          <span className="reviewFit-desc-short">{review.userHeight}</span>
         </li>
         <li className="reviewWeight">
           <span className="reviewFit-title-short">Weight: </span>
-          <span className="reviewFit-desc-short">{review.userWeight}lbs.</span>
+          <span className="reviewFit-desc-short">{review.userWeight}lbs</span>
         </li>
       </ul>
     </div>}
