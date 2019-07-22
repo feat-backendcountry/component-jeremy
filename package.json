@@ -7,14 +7,13 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "jest": {
-    "preset": "@shelf/jest-mongodb"
-  },
   "scripts": {
     "seed": "node database/seed.js",
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "init": "jest --init"
   },
   "dependencies": {
     "axios": "^0.19.0",
