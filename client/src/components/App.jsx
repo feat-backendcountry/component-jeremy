@@ -44,7 +44,7 @@ class App extends React.Component {
   }
 
   getReviews() {
-    Axios.get(`http://localhost:4002/reviews/${this.state.itemId}`)
+    Axios.get(`reviews/${this.state.itemId}`)
       .then(({data}) => {
         const reviews = data;
         this.setState({reviews}, () => {
