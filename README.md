@@ -12,12 +12,20 @@
 
 ## Usage
 ```sh
+$ git clone https://github.com/feat-backendcountry/component-jeremy
+
+$ cd component-jeremy
+
 $ npm install
-$ npm start
-$ npm run seed
+
 $ npm run build
 
-navigate to localhost:4002 or localhost:4002/?id={1-100}
+$ npm run seed
+
+$ npm start
+
+navigate to localhost:4002 for a random item\'s reviews 
+or to localhost:4002/?id={1-100} for a specific item\'s reviews
 ```
 
 # Reviews Feed
