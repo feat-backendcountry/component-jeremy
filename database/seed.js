@@ -409,30 +409,30 @@ const usernames = [
 ];
 
 const userAvatars = [
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/1.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/2.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/3.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/4.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/5.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/6.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/7.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/8.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/9.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/10.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/11.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/12.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/13.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/14.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/15.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/16.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/17.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/18.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/19.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/20.jpeg`,
-  `https://s3-us-west-1.amazonaws.com/backendcountry.avatars/21.jpeg`
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/1.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/2.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/3.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/4.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/5.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/6.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/7.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/8.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/9.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/10.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/11.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/12.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/13.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/14.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/15.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/16.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/17.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/18.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/19.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/20.jpeg',
+  'https://s3-us-west-1.amazonaws.com/backendcountry.avatars/21.jpeg'
 ];
 
-const ratings = [1, 2, 3, 4, 5];
+const ratings = [1, 2, 3, 3, 4, 5, 5];
 
 const months = [
   'January',
@@ -450,7 +450,7 @@ const months = [
 ];
 
 const days = [];
-for (let i = 0; i < 29; i++) {
+for (let i = 1; i < 29; i++) {
   days.push(i);
 }
 
@@ -463,7 +463,7 @@ const fits = [
   'Runs Small',
   'Runs Small',
   'Runs Small',
-  'Runs Small',
+  'True to Size',
   'True to Size',
   'True to Size',
   'True to Size',
@@ -516,7 +516,14 @@ const goodReviewTitles = [
   'Super Comfortable',
   'Never taking them off',
   'Can\'t go back',
-  'Matches my style'
+  'Matches my style',
+  'These go great with toe socks!',
+  'Sweden\'s finest',
+  'Just what I wanted',
+  'These are my new favorite pants',
+  'Great',
+  'Get these pants',
+  'What more do I have to say?'
 ];
 
 const neutReviewTitles = [
@@ -531,17 +538,24 @@ const neutReviewTitles = [
   'Super Comfortable',
   'Content',
   'Not brown',
-  'They fit, bit could be browner',
+  'They fit, but could be browner',
   'I can hike now',
   'These go well with my toe socks',
   'Seems like a good pant',
   'You call this brown?',
-  'I wear these'
+  'I wear these to hike big trails',
+  'Pants pants pants pants pants',
+  'Expensive, but worth it?',
+  'There is nothing either good or bad but thinking makes it so.',
+  'The wheel is come full circle: I am here.',
+  'What more do I have to say?',
+  'A little snug',
+  'Takes wax well'
 ];
 
 const badReviewTitles = [
-  'too long',
-  'Great Pants if....',
+  'Suck In Your Gut!',
+  'Terrible Pants',
   'Poor sizing...',
   'Couldn\'t return!',
   'Mixed emotions',
@@ -555,8 +569,15 @@ const badReviewTitles = [
   'Broken dreams. Broken promises.',
   'Looks can be deceiving',
   'Lost Trust',
-  'A plauge on both your houses',
-  'If I wanted shorts I would have purchased shorts'
+  'A Plague on both your houses',
+  'If I wanted shorts I would have purchased shorts',
+  'Just Didn\'t Work For Me',
+  'What more do I have to say ?',
+  'I can\'t believe I just spent so much money on this...',
+  'I can\'t even consider that these reviews were made by real people',
+  'They ripped the first trek out and my day is ruined.',
+  'I can\t believe they\'ve done that',
+  'I\'d say I\'m sorry to disappoint you… but I\'m not.'
 ];
 
 const goodReviews = [
@@ -569,7 +590,12 @@ const goodReviews = [
   'I have like 4 pair of these pants. I have used them for a bunch of different outdoor activities. I just ordered these for my dad and he is going to be so pumped to try them out!',
   'These are some tough work pants. Huge fan of these trekking pants.  Super durable, good articulation, and great fit.  I use these not only for trekking and hiking, but around the house, on film shoots, and everything in between.  No complaints and worth every penny!',
   'It took a while to pull the trigger due to the high price point, but these are awesome for the outdoors.  I expect these will be my camping and backpacking pants for years to come.',
-  'The cost of these pants are well worth it.The high quality and durability of the pant can take you from stylish to tactical, street to trail! The fit is great, I bought them for my husband and hot dang he looks awesome in them.'
+  'The cost of these pants are well worth it.The high quality and durability of the pant can take you from stylish to tactical, street to trail! The fit is great, I bought them for my husband and hot dang he looks awesome in them.', //
+  'As God as my witness, as God as my witness, they\'re not going to lick me.I\'m going to live through this and when it\'s all over, I\'ll never be hungry again. No, nor any of my folk. If I have to lie, cheat, steal or kill. As God as my witness, I\'ll never be hungry again.',
+  'Best pair of pants I own, they are comfortable and tough to climb, work, or just to hangout in. love the style and the adjustable cuff is awesome in case you want shorts for hotter days.',
+  'Overall, they are extremely functional, comfortable, and while not being overly baggy. They look awesome, and are designed well and made of resilient materials.',
+  'I have 2-3 pairs of these pants. These keep me warm and dry out on the slopes with just a thin base layer or merino boxers on underneath. Highly recommended.',
+
 ];
 
 const neutReviews = [
@@ -582,7 +608,13 @@ const neutReviews = [
   'I have not worn these trekking but love the initial fit. Super easy to wax for additional weather protection. Well thought out and worth every penny.',
   'Great pants, classic cut/style. These are built to last and I would say that they are a little heavy for some occasions. They are more comfortable in the wild - climbing mountains or building a log cabin of some sort.',
   'Used these a few times, so far and they are great. Repels wind pretty well even without a base layer in 20° & 30° weather. stayed petty dry on snowy hikes and snowshoe outings, so far, with the G-1000 proofing. Although if you\'re out in say a blizzard, or heavy snow, may not be ideal for that, but I would like to see how they fair in that.',
-  'These some rugged pants. You need at least one good pair and I highly recommend these....not to mention they are cool looking.'
+  'These some rugged pants. You need at least one good pair and I highly recommend these....not to mention they are cool looking.',
+  'Great.Wear them lots.Will buy more. 10 / 10 would recommend.',
+  'This above all: to thine ownself be true. And it must follow, as the night the day, Thou canst not then be false to any man.',
+  'Some are born great, some achieve greatness, and some have greatness thrust upon them.',
+  'We know what we are, but know not what we may be.',
+  'Love looks not with the eyes, but with the mind, and therefore is winged Cupid painted blind',
+  'The world ain\'t all sunshine and rainbows. It\'s a very mean and nasty place and I don\'t care how tough you are it will beat you to your knees and keep you there permanently if you let it. You, me, or nobody is gonna hit as hard as life.But it ain\'t about how hard ya hit. It\'s about how hard you can get it and keep moving forward.How much you can take and keep moving forward .That\'s how winning is done! Cause if you\'re willing to go through all the battling you got to go through to get where you want to get, who\'s got the right to stop you?'
 ];
 
 const badReviews = [
@@ -595,41 +627,56 @@ const badReviews = [
   'Wore these for 2 weeks in Iceland, held up terribly.  Do I have to purchase my own wax for what are supposed to be waterproof pants?',
   'I\'m a solid size 36 waist. I ordered and found that they are more of a 33-34 waist... I couldn\'t even button them. The quality looked good, and they are pretty cool, but I\'m having to return them.',
   'I have fairly muscular legs,  While the waist fit they are very snug down the leg and also I believe a little shorter in length they they claim compared to most companies out there.  I think they looked well made and really wish I could have tried them out. I ordered the next size up to see if that will do the trick.',
-  'How much do these weigh? Beacuse I\'m headed to Africa and there is a limit to how much I can take on the tiny airplanes I\'m forced to fly in.'
+  'How much do these weigh? Beacuse I\'m headed to Africa and there is a limit to how much I can take on the tiny airplanes I\'m forced to fly in.',
+  'But then I sigh and, with a piece of scripture, Tell them that God bids us do good for evil; And thus I clothe my naked villainy With odd old ends stolen out of Holy Writ, And seem a saint when most I play the devil.',
+  'Lord, what fools these mortals be!',
+  'A man can die but once.',
+  'Full fathom five thy father lies, of his bones are coral made.Those are pearls that were his eyes.Nothing of him that doth fade, but doth suffer a sea - change into something rich and strange.',
+  'The miserable have no other medicine but only hope, but I just wish these pants were the size I wanted'
 ];
+
+const compare = function (a, b) {
+  const yearA = +a.date.slice(-4);
+  const yearB = +b.date.slice(-4);
+  let comparison = 0;
+  if (yearA > yearB) {
+    comparison = -1;
+  } else if (yearA < yearB) {
+    comparison = 1;
+  }
+  return comparison;
+};
 
 const gen100 = function () {
   const seed = [];
-  for (let i = 1; i < 100; i++) {
-
+  for (let i = 1; i <= 100; i++) {
     const itemId = i;
     const itemName = itemNames[i];
-    const numOfComments = Math.ceil(Math.random() * 15);
+    const numOfComments = Math.ceil(Math.random() * 20);
     const itemReviews = [];
-
     for (let j = 0; j < numOfComments; j++) {
-
       const username = usernames[Math.floor(Math.random() * 300)];
-      const userAvatar = 'http://lorempixel.com/150/150/'; //userAvatars[Math.floor(Math.random() * 21)];
+      const userAvatar = userAvatars[Math.floor(Math.random() * 21)];
       const month = months[Math.floor(Math.random() * 12)];
       const day = days[Math.floor(Math.random() * 28)];
       const year = years[Math.floor(Math.random() * 11)];
       const date = `${month} ${day}, ${year}`;
-
-      const rating = ratings[Math.floor(Math.random() * 5)];
-      const reviewTitle = (rating === 5) ? goodReviewTitles[Math.floor(Math.random() * 17)]
-        : (rating >= 3) ? neutReviewTitles[Math.floor(Math.random() * 17)]
-          : badReviewTitles[Math.floor(Math.random() * 17)];
-      const reviewBody = (rating === 5) ? goodReviews[Math.floor(Math.random() * 9)]
-        : (rating >= 3) ? neutReviews[Math.floor(Math.random() * 9)]
-          : badReviews[Math.floor(Math.random() * 9)];
-
-      const hasFit = [false, true][Math.floor(Math.random() * 2)];
+      const rating = ratings[Math.floor(Math.random() * 7)];
+      const reviewTitle = (rating === 5) ? goodReviewTitles[Math.floor(Math.random() * 24)]
+        : (rating >= 3) ? neutReviewTitles[Math.floor(Math.random() * 24)]
+          : badReviewTitles[Math.floor(Math.random() * 24)];
+      const reviewBody = (rating === 5) ? goodReviews[Math.floor(Math.random() * 14)]
+        : (rating >= 3) ? neutReviews[Math.floor(Math.random() * 16)]
+          : badReviews[Math.floor(Math.random() * 15)];
+      const hasFit = [false, true, true][Math.floor(Math.random() * 3)];
       if (hasFit) {
-        const familiarity = familiarities[Math.floor(Math.random() * 9)];
+        const familiarity = familiarities[Math.floor(Math.random() * 10)];
         const fit = fits[Math.floor(Math.random() * 12)];
         const size = sizes[Math.floor(Math.random() * 8)];
-        const userHeight = Math.floor(Math.random() * 24) + 55;
+        const totalInches = Math.floor(Math.random() * 20) + 59;
+        const ft = Math.floor(totalInches / 12);
+        const inch = totalInches - (ft * 12);
+        const userHeight = `${ft}' ${inch}"`;
         const userWeight = Math.floor(Math.random() * 160) + 110;
         itemReviews[j] = {
           rating,
@@ -655,7 +702,7 @@ const gen100 = function () {
         };
       }
     }
-
+    itemReviews.sort(compare);
     seed[i] = {
       itemId,
       itemName,

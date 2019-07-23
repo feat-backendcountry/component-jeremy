@@ -21,7 +21,7 @@ class App extends React.Component {
 
   componentWillMount() {
     var parsedUrl = new URL(window.location.href);
-    const itemId = +parsedUrl.searchParams.get('id') || 1;
+    const itemId = +parsedUrl.searchParams.get('id') || Math.ceil(Math.random() * 100) + 1;
     this.setState({itemId}, () => this.getReviews());
   }
 
@@ -32,19 +32,19 @@ class App extends React.Component {
   }
 
   showModal() {
-    this.setState({ 
-      showModal: true 
+    this.setState({
+      showModal: true
     });
   }
 
   hideModal() {
-    this.setState({ 
-      showModal: false 
+    this.setState({
+      showModal: false
     });
   }
 
   getReviews() {
-    Axios.get(`http://localhost:4002/reviews/${this.state.itemId}`)
+    Axios.get(`reviews/${this.state.itemId}`)
       .then(({data}) => {
         const reviews = data;
         this.setState({reviews}, () => {
@@ -119,12 +119,12 @@ class App extends React.Component {
     return (
       <div className="app">
         {this.state.showModal &&
-          <div className='modal-container'>
+          <div className='modal-container' onClick={this.hideModal}>
             <img
               className='modal-image'
               src='https://i.imgur.com/kL2hUS1.png'
               alt='static image component'
-              onClick={this.hideModal}
+              // onClick={this.hideModal}
             />
           </div>
         }

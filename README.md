@@ -5,34 +5,29 @@
 ## Related Projects
 
   - https://github.com/feat-backendcountry/component-kristina
+  - https://github.com/feat-backendcountry/component-jeremy
+  - https://github.com/feat-backendcountry/proxy-server-jeremy
   - https://github.com/feat-backendcountry/component-tim
   - https://github.com/feat-backendcountry/component-kirk
-  - https://github.com/feat-backendcountry/component-jeremy
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
 
 ## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
 ```sh
-npm install
+$ git clone https://github.com/feat-backendcountry/component-jeremy
+
+$ cd component-jeremy
+
+$ npm install
+
+$ npm run build
+
+$ npm run seed
+
+$ npm start
+
+navigate to localhost:4002 for a random item\'s reviews 
+or to localhost:4002/?id={1-100} for a specific item\'s reviews
 ```
 
+# Reviews Feed
+
+![Image of application](https://i.imgur.com/GHojUXr.png)

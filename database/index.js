@@ -18,7 +18,7 @@ const reviewSchema = mongoose.Schema(
       familiarity: { type: String, required: false },
       fit: { type: String, required: false },
       size: { type: String, required: false },
-      userHeight: { type: Number, required: false },
+      userHeight: { type: String, required: false },
       userWeight: { type: Number, required: false }
     }]
   }
